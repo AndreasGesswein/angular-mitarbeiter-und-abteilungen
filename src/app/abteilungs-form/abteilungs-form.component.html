@@ -1,0 +1,20 @@
+<div class="card">
+  <h5 *ngIf="!editMode" class="card-header">Abteilung hinzufügen</h5>
+  <h5 *ngIf="editMode" class="card-header">Abteilung editieren</h5>
+  <div class="card-body">
+    <table class="table">
+
+      <label>ID</label>
+      <input type="text" class="form-control" [(ngModel)]="abteilung.id"/>
+
+      <label>Bezeichnung</label>
+      <input type="text" class="form-control" [(ngModel)]="abteilung.bezeichnung"/>
+
+      <div *ngIf="error" class="alert alert-danger" role="alert">
+       A simple danger alert—check it out!
+      </div>
+
+      <button type="button" class="btn-block btn-primary my-4" (click)="save()">save</button>
+    </table>
+  </div>
+</div>

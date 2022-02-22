@@ -1,0 +1,24 @@
+<div class="card">
+  <h5 class="card-header">Abteilungsübersicht</h5>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <th>ID</th>
+        <th>Bezeichnung</th>
+        <th></th>
+        <th></th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let a of abteilungen">
+          <td>{{a.id}}</td>
+          <td>{{a.bezeichnung}}</td>
+          <td><span class="material-icons" routerLink="/abteilungsform/{{a.id}}">edit</span></td>
+          <td><span class="material-icons" (click)="delete(a)">delete</span></td>
+        </tr>
+      </tbody>
+
+
+    </table>
+  </div>
+</div>

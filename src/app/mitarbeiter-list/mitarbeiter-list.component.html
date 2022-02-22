@@ -1,0 +1,30 @@
+<div class="card">
+  <h5 class="card-header">Mitarbeiterübersicht</h5>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <th>ID</th>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Gehaltsstufe</th>
+        <th>Gehalt</th>
+        <th>Abteilung</th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let m of mitarbeiter">
+          <td>{{m.id}}</td>
+          <td>{{m.vorname}}</td>
+          <td>{{m.nachname}}</td>
+          <td>{{m.gehaltsstufe}}</td>
+          <td>{{m.gehalt | currency: "EUR"}}</td>
+          <td>{{m.abteilung.bezeichnung}}</td>
+          <td><span class="material-icons" routerLink="/mitarbeiterform/{{m.id}}">edit</span></td>
+          <td>
+            <span class="material-icons" (click)="delete(m)">delete</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
